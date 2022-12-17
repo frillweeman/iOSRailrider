@@ -1,5 +1,7 @@
 # RailRider
 
+<img src="https://willsploit.s3.amazonaws.com/railrider-proto.png" width=200 />
+
 App to assist with train hopping
 
 ## Features
