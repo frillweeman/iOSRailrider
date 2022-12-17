@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D57A9241294CF83C00816770 /* Speedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A9240294CF83C00816770 /* Speedometer.swift */; };
+		D57A9243294D014A00816770 /* CrossingAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A9242294D014A00816770 /* CrossingAlert.swift */; };
 		D5E7203D291B48EE002ED578 /* RailRiderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E7203C291B48EE002ED578 /* RailRiderApp.swift */; };
 		D5E7203F291B48EE002ED578 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E7203E291B48EE002ED578 /* ContentView.swift */; };
 		D5E72041291B48F0002ED578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E72040291B48F0002ED578 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D57A9240294CF83C00816770 /* Speedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speedometer.swift; sourceTree = "<group>"; };
+		D57A9242294D014A00816770 /* CrossingAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossingAlert.swift; sourceTree = "<group>"; };
 		D5E72039291B48EE002ED578 /* RailRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E7203C291B48EE002ED578 /* RailRiderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailRiderApp.swift; sourceTree = "<group>"; };
 		D5E7203E291B48EE002ED578 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				D5E7203C291B48EE002ED578 /* RailRiderApp.swift */,
 				D5E7203E291B48EE002ED578 /* ContentView.swift */,
+				D57A9242294D014A00816770 /* CrossingAlert.swift */,
+				D57A9240294CF83C00816770 /* Speedometer.swift */,
 				D5E72040291B48F0002ED578 /* Assets.xcassets */,
 				D5E72042291B48F0002ED578 /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57A9241294CF83C00816770 /* Speedometer.swift in Sources */,
 				D5E7203F291B48EE002ED578 /* ContentView.swift in Sources */,
+				D57A9243294D014A00816770 /* CrossingAlert.swift in Sources */,
 				D5E7203D291B48EE002ED578 /* RailRiderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +277,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RailRider/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your shit, please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +306,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RailRider/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your shit, please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
