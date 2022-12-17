@@ -34,7 +34,6 @@ class RailwayModel: ObservableObject {
         guard let url = URL(string: "http://localhost:3000/railroad/\(railwayId)/crossings") else {
                 return
             }
-        print(url.absoluteString)
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
@@ -55,8 +54,9 @@ class RailwayModel: ObservableObject {
         task.resume()
     }
     
-    func fetchRailways() {
-        guard let url = URL(string: "http://localhost:3000/nearestRailroad?coordinates=34.627103,-86.970355&radius=100") else {
+    func fetchRailways(currentLocation: CLLocationCoordinate2D?) {
+        guard let cl = currentLocation else { return }
+        guard let url = URL(string: "http://localhost:3000/nearestRailroad?coordinates=\(cl.latitude),\(cl.longitude)&radius=100") else {
             return
         }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
@@ -82,14 +82,18 @@ class RailwayModel: ObservableObject {
 struct ContentView: View {
     @StateObject private var viewModel = MapViewModel()
     @StateObject private var railwayModel = RailwayModel()
-    @State private var currentRailway: OSMRailway?
+    @State private var currentRailway: OSMRailway? = nil
+    
+    private func fetchRailways() {
+        railwayModel.fetchRailways(currentLocation: viewModel.locationManager?.location?.coordinate)
+    }
     
     var body: some View {
         ZStack(alignment: .top) {
             Map(coordinateRegion: $viewModel.region, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: railwayModel.crossings) {
                 crossing in
                 MapAnnotation(coordinate: crossing.coordinates) {
-                    Label("asshat", systemImage: "tram")
+                    Label("Xing", systemImage: "car.circle.fill")
                 }
             }
                 .ignoresSafeArea()
@@ -112,7 +116,7 @@ struct ContentView: View {
                         railwayModel.fetchCrossings(railwayId: railway.id)
                     })
                 } else {
-                    Button("Find Nearby Railway", action: railwayModel.fetchRailways)
+                    Button("Find Nearby Railway", action: fetchRailways)
                         .buttonStyle(.borderedProminent)
                 }
                 Spacer()
