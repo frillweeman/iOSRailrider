@@ -14,4 +14,4 @@ App to assist with train hopping
 * Display speed and track speed limits
 * more features coming soon...
 
-Uses OpenStreetMap's Overpass API for querying railroad data and Apple Maps for display. There is a backend associated with this, which will be added to a separate repo soon.
+Uses OpenStreetMap's Overpass API for querying railroad data and Apple Maps for display. My temporary backend for this is [RailRiderAPI](https://github.com/frillweeman/RailRiderAPI), but it will eventually be broken out into Lambdas.
